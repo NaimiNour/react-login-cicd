@@ -1,7 +1,10 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom'; // ← Required for .toBeInTheDocument
 import App from "./App";
 
-test("renders welcome text", () => {
+test("renders login header", () => {
   render(<App />);
-  expect(screen.getByText(/welcome/i)).toBeInTheDocument();
+  expect(screen.getByText(/login/i)).toBeInTheDocument();
 });
+
