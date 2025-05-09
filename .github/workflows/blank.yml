@@ -33,3 +33,6 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/react-login-cicd
+
+      - name: Notify Render to redeploy
+        run: curl -X POST https://api.render.com/deploy/srv-d0f4fbbuibrs7395vieg?key=gg3XnS0DxGE
