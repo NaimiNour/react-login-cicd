@@ -20,7 +20,7 @@ function App() {
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded shadow-md w-80"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">New Login</h2>
         <input
           type="email"
           name="email"
