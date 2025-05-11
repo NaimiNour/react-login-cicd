@@ -1,13 +1,9 @@
-# Build
-FROM node:18 as builder
+# For React app using serve
+FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-
-# Run
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 3000
+CMD ["npx", "serve", "-s", "build", "-l", "3000"]
